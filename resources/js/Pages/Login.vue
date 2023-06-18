@@ -93,7 +93,7 @@ import { useToast } from "vue-toastification";
 const toast = useToast();
 
 const form = useForm({
-    email: "info@sinarahmannejad.com",
+    email: "example@test.com",
     password: "password",
 });
 

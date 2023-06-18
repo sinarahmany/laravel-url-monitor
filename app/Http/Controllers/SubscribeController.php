@@ -10,7 +10,7 @@ class SubscribeController extends Controller
     public function store()
     {
         $user = auth()->user();
-        $data = $user->newSubscription('default', 'price_1MsJA9CZJF6ofZHwJrA5zng7')->checkout();
+        $data = $user->newSubscription('default', 'price_1NK9rbGIrmKbcqV6fER89CdD')->checkout();
         return Inertia::location($data->url);
     }
 
