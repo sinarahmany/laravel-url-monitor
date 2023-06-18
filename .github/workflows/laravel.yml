@@ -61,3 +61,47 @@ jobs:
       - name: Compile assets for production
 
         run: npm run build
+
+
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+
+        uses: actions/checkout@v2
+
+      - name: Deployment
+
+        uses: appleboy/ssh-action@main
+
+        with:
+
+          host: ${{ secrets.SSH_HOST }}
+
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+          username: ${{ secrets.SSH_USERNAME }}
+
+          script: |
+
+            cd /var/www/app.sinarahmannejad.com/
+
+            php artisan down
+
+            git checkout -f
+
+            git pull
+
+            npm install
+
+            npm run build
+
+            php artisan optimize
+
+            php artisan up
+
+
