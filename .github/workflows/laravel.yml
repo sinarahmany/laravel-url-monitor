@@ -46,7 +46,7 @@ jobs:
 
       - name: Setup Node.js
 
-        uses: actions/setup-node@v3-beta
+        uses: actions/setup-node@v3
 
         with:
 
@@ -76,7 +76,7 @@ jobs:
 
       - name: Setup Node.js
 
-        uses: actions/setup-node@v3-beta
+        uses: actions/setup-node@v3
 
         with:
 
