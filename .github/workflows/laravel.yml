@@ -86,7 +86,7 @@ jobs:
 
       - name: Deployment
 
-        uses: appleboy/ssh-action@0.1.10
+        uses: appleboy/ssh-action@v0.1.10
 
         with:
 
