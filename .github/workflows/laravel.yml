@@ -42,15 +42,15 @@ jobs:
 
       - name: Checkout
 
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Node.js
 
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v3-beta
 
         with:
 
-          node-version: '19'
+          node-version: '18'
 
           check-latest: true
 
@@ -72,11 +72,21 @@ jobs:
 
       - name: Checkout
 
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+
+        uses: actions/setup-node@v3-beta
+
+        with:
+
+          node-version: '18'
+
+          check-latest: true
 
       - name: Deployment
 
-        uses: appleboy/ssh-action@main
+        uses: appleboy/ssh-action@0.1.10
 
         with:
 
@@ -91,8 +101,6 @@ jobs:
             cd /var/www/app.sinarahmannejad.com/
 
             php artisan down
-
-            git checkout -f
 
             git pull
 
